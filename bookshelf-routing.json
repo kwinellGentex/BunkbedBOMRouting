@@ -1,0 +1,77 @@
+[
+    {
+        "step": 1,
+        "description": "Read instruction manual and verify all components.",
+        "taktTime": 4
+    },
+    {
+        "step": 10,
+        "description": "Prepare side panels and check alignment holes.",
+        "taktTime": 6
+    },
+    {
+        "step": 15,
+        "description": "Position back panel for frame assembly.",
+        "taktTime": 3
+    },
+    {
+        "step": 20,
+        "description": "Attach top and bottom panels to side panels.",
+        "taktTime": 12
+    },
+    {
+        "step": 25,
+        "description": "Install shelf pins in side panel holes.",
+        "taktTime": 8
+    },
+    {
+        "step": 30,
+        "description": "Prepare shelf panels for edge banding.",
+        "taktTime": 5
+    },
+    {
+        "step": 35,
+        "description": "Apply edge banding to shelf panels.",
+        "taktTime": 15
+    },
+    {
+        "step": 40,
+        "description": "Apply wood glue and secure edge banding.",
+        "taktTime": 10
+    },
+    {
+        "step": 45,
+        "description": "Allow glue to cure (inspection time).",
+        "taktTime": 2
+    },
+    {
+        "step": 50,
+        "description": "Complete shelf preparation and quality check.",
+        "taktTime": 3
+    },
+    {
+        "step": 55,
+        "description": "Assemble frame with cam bolts and locks.",
+        "taktTime": 18
+    },
+    {
+        "step": 60,
+        "description": "Complete frame assembly and square check.",
+        "taktTime": 5
+    },
+    {
+        "step": 65,
+        "description": "Install anti-tip hardware to wall.",
+        "taktTime": 12
+    },
+    {
+        "step": 70,
+        "description": "Position shelves and final assembly.",
+        "taktTime": 8
+    },
+    {
+        "step": 75,
+        "description": "Final inspection and stability test.",
+        "taktTime": 4
+    }
+]

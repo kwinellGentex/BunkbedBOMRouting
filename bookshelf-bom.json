@@ -1,0 +1,144 @@
+{
+    "description": "5-Tier Bookshelf",
+    "quantity": 1,
+    "step": 0,
+    "source": "Completed Item",
+    "bom": [
+        {
+            "description": "Instruction Manual",
+            "quantity": 1,
+            "step": 1,
+            "source": "Provided",
+            "bom": []
+        },
+        {
+            "description": "Frame Assembly",
+            "quantity": 1,
+            "step": 60,
+            "source": "Partial Item",
+            "bom": [
+                {
+                    "description": "Left Side Panel",
+                    "quantity": 1,
+                    "step": 10,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "Right Side Panel",
+                    "quantity": 1,
+                    "step": 10,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "Back Panel",
+                    "quantity": 1,
+                    "step": 15,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "Top Panel",
+                    "quantity": 1,
+                    "step": 20,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "Bottom Panel",
+                    "quantity": 1,
+                    "step": 20,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "Shelf Pins",
+                    "quantity": 20,
+                    "step": 25,
+                    "source": "Provided",
+                    "bom": []
+                }
+            ]
+        },
+        {
+            "description": "Adjustable Shelf",
+            "quantity": 4,
+            "step": 50,
+            "source": "Partial Item",
+            "bom": [
+                {
+                    "description": "Shelf Panel",
+                    "quantity": 1,
+                    "step": 30,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "Shelf Edge Banding",
+                    "quantity": 4,
+                    "step": 35,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "Wood Glue",
+                    "quantity": 1,
+                    "step": 40,
+                    "source": "Provided",
+                    "bom": []
+                }
+            ]
+        },
+        {
+            "description": "Anti-Tip Hardware",
+            "quantity": 1,
+            "step": 65,
+            "source": "Partial Item",
+            "bom": [
+                {
+                    "description": "Wall Anchor",
+                    "quantity": 2,
+                    "step": 65,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "Safety Strap",
+                    "quantity": 1,
+                    "step": 65,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "Mounting Screws",
+                    "quantity": 4,
+                    "step": 65,
+                    "source": "Provided",
+                    "bom": []
+                }
+            ]
+        },
+        {
+            "description": "Assembly Screws",
+            "quantity": 24,
+            "step": 55,
+            "source": "Provided",
+            "bom": []
+        },
+        {
+            "description": "Cam Bolts",
+            "quantity": 8,
+            "step": 55,
+            "source": "Provided",
+            "bom": []
+        },
+        {
+            "description": "Cam Locks",
+            "quantity": 8,
+            "step": 55,
+            "source": "Provided",
+            "bom": []
+        }
+    ]
+}

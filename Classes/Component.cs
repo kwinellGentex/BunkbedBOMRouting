@@ -9,7 +9,7 @@
     /// <param name="Source">Source of component (e.g., Provided, Partial Item, Completed Item)</param>
     /// <param name="Bom">List of sub-components (BOM)</param>
     public record Component(string Description, int Quantity, int Step, string Source, List<Component> Bom);
-    
+
     public static class ComponentExtensions
     {
 
@@ -37,7 +37,7 @@
                 .GroupBy(kvp => kvp.Key)
                 .ToDictionary(g => g.Key, g => g.Sum(kvp => kvp.Value));
         }
-        
+
         /// <summary>
         /// Returns a dictionary of all parts and their total quantities for a given component, including all sub-components in the BOM.
         /// </summary>
@@ -64,13 +64,18 @@
         {
             if (component.Bom == null || component.Bom.Count == 0)
             {
-                return new List<Part> { new Part { Description = component.Description, Quantity = component.Quantity } };
+                return new List<Part> { new Part { Description = component.Description,
+                                                   Quantity = component.Quantity } };
             }
 
             return component.Bom
                 .SelectMany(sub => GetComponentProvidedParts(sub))
                 .GroupBy(p => p.Description)
-                .Select(g => new Part { Description = g.Key, Quantity = g.Sum(p => p.Quantity) })
+                .Select(g => new Part
+                {
+                    Description = g.Key,
+                    Quantity = g.Sum(p => p.Quantity)
+                })
                 .ToList();
         }
 
@@ -79,9 +84,9 @@
         /// </summary>
         /// <param name="component"></param>
         /// <returns></returns>
-        public static List<int> GetStepsAssociatedWithComponents(this Component component)
+        public static List<Step> GetStepsAssociatedWithComponents(this Component component)
         {
-            var steps = new List<int> { component.Step };
+            var steps = new List<Step> { new Step(component.Step) };
             if (component.Bom != null && component.Bom.Count > 0)
             {
                 steps.AddRange(component.Bom
@@ -100,7 +105,7 @@
         /// <returns></returns>
         public static List<RoutingStep> GetStepsThatRequireParts(this Component component, IEnumerable<RoutingStep> routingSteps)
         {
-            List<int> StepsAssociatedWithComponents = component.GetStepsAssociatedWithComponents();
+            List<Step> StepsAssociatedWithComponents = component.GetStepsAssociatedWithComponents();
             return routingSteps.GetRoutingSteps(StepsAssociatedWithComponents);
         }
 
@@ -112,8 +117,58 @@
         /// <returns></returns>
         public static List<RoutingStep> GetStepsThatDoNotRequireParts(this Component component, IEnumerable<RoutingStep> routingSteps)
         {
-            List<int> StepsAssociatedWithComponents = component.GetStepsAssociatedWithComponents();
-            return routingSteps.Where(s => !StepsAssociatedWithComponents.Contains(s.Step)).ToList();
+            List<Step> StepsAssociatedWithComponents = component.GetStepsAssociatedWithComponents();
+            return routingSteps.Where(s => !StepsAssociatedWithComponents
+                                        .Contains(new Step(s.Step)))
+                                        .ToList();
+        }
+        public static List<Step> GetStepsThatRequireTools(this Component component)
+        {
+            if (component.Bom == null || component.Bom.Count == 0)
+            {
+                if (component.Description.ToLower().Contains("screws"))
+                {
+                    return new List<Step>() { new Step(component.Step) };
+                }
+                else
+                {
+                    return new List<Step>();
+                }
+            }
+            return component.Bom
+                .SelectMany(sub => GetStepsThatRequireTools(sub))
+                .GroupBy(s => s)
+                .Select(g => g.Key)
+                .ToList();
+        }
+
+        public static List<RoutingStep> GetRoutingStepsThatRequireTools(this Component component, IEnumerable<RoutingStep> routingSteps)
+        {
+            List<Step> StepsThatRequireTools = component.GetStepsThatRequireTools();
+            return routingSteps.GetRoutingSteps(StepsThatRequireTools);
+        }
+        
+        public static List<Component> FilterComponent(this Component component, Func<Component, bool> predicate, int depth = 0)
+        {
+            if (depth > 10)
+            {
+                throw new InvalidOperationException("Maximum recursion depth exceeded while filtering components.");
+            }
+
+            if (predicate(component))
+            {
+                return new List<Component> { component };
+            }
+            else if (component.Bom != null && component.Bom.Count > 0)
+            {
+                return component.Bom
+                    .SelectMany(sub => FilterComponent(sub, predicate, depth + 1))
+                    .ToList();
+            }
+            else
+            {
+                return new List<Component>();
+            }
         }
     }
 }

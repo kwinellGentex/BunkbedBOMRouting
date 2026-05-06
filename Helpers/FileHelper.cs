@@ -27,6 +27,7 @@
 
             System.IO.File.WriteAllLines(filePath, lines);
         }
+        
         public static void WriteToCSV(Dictionary<string, int> dict, string keyName, string valueName)
         {
             var lines = new List<string>
@@ -39,7 +40,11 @@
                 lines.Add($"{kvp.Key},{kvp.Value}");
             }
 
-            System.IO.File.WriteAllLines("output.csv", lines);
+            // Get the project directory (3 levels up from bin/Debug/net8.0)
+            string projectDirectory = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", ".."));
+            string outputPath = Path.Combine(projectDirectory, "output.csv");
+            
+            System.IO.File.WriteAllLines(outputPath, lines);
         }
-}
+    }
 }

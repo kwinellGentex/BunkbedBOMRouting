@@ -1,0 +1,50 @@
+{
+    "description": "Simple Coffee Table",
+    "quantity": 1,
+    "step": 0,
+    "source": "Completed Item",
+    "bom": [
+        {
+            "description": "Assembly Instructions",
+            "quantity": 1,
+            "step": 1,
+            "source": "Provided",
+            "bom": []
+        },
+        {
+            "description": "Table Top",
+            "quantity": 1,
+            "step": 15,
+            "source": "Provided",
+            "bom": []
+        },
+        {
+            "description": "Table Leg",
+            "quantity": 4,
+            "step": 10,
+            "source": "Provided",
+            "bom": []
+        },
+        {
+            "description": "Corner Brackets",
+            "quantity": 4,
+            "step": 20,
+            "source": "Provided",
+            "bom": []
+        },
+        {
+            "description": "Wood Screws",
+            "quantity": 16,
+            "step": 20,
+            "source": "Provided",
+            "bom": []
+        },
+        {
+            "description": "Felt Pads",
+            "quantity": 4,
+            "step": 25,
+            "source": "Provided",
+            "bom": []
+        }
+    ]
+}

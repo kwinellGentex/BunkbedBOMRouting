@@ -1,0 +1,158 @@
+{
+    "description": "Office Desk",
+    "quantity": 1,
+    "step": 0,
+    "source": "Completed Item",
+    "bom": [
+        {
+            "description": "Assembly Manual",
+            "quantity": 1,
+            "step": 1,
+            "source": "Provided",
+            "bom": []
+        },
+        {
+            "description": "Desktop",
+            "quantity": 1,
+            "step": 40,
+            "source": "Partial Item",
+            "bom": [
+                {
+                    "description": "Wooden Desktop Panel",
+                    "quantity": 1,
+                    "step": 10,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "Metal Brackets",
+                    "quantity": 4,
+                    "step": 15,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "1.5 inch Screws",
+                    "quantity": 16,
+                    "step": 20,
+                    "source": "Provided",
+                    "bom": []
+                }
+            ]
+        },
+        {
+            "description": "Drawer Assembly",
+            "quantity": 3,
+            "step": 70,
+            "source": "Partial Item",
+            "bom": [
+                {
+                    "description": "Drawer Front Panel",
+                    "quantity": 1,
+                    "step": 45,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "Drawer Back Panel",
+                    "quantity": 1,
+                    "step": 45,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "Drawer Side Panel",
+                    "quantity": 2,
+                    "step": 45,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "Drawer Bottom Panel",
+                    "quantity": 1,
+                    "step": 50,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "Drawer Handle",
+                    "quantity": 1,
+                    "step": 55,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "Drawer Slides",
+                    "quantity": 2,
+                    "step": 60,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "Wood Screws",
+                    "quantity": 12,
+                    "step": 65,
+                    "source": "Provided",
+                    "bom": []
+                }
+            ]
+        },
+        {
+            "description": "Leg Assembly",
+            "quantity": 4,
+            "step": 35,
+            "source": "Partial Item",
+            "bom": [
+                {
+                    "description": "Table Leg",
+                    "quantity": 1,
+                    "step": 25,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "Leg Brace",
+                    "quantity": 2,
+                    "step": 30,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "2 inch Bolts",
+                    "quantity": 4,
+                    "step": 30,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "Washers",
+                    "quantity": 4,
+                    "step": 30,
+                    "source": "Provided",
+                    "bom": []
+                },
+                {
+                    "description": "Nuts",
+                    "quantity": 4,
+                    "step": 30,
+                    "source": "Provided",
+                    "bom": []
+                }
+            ]
+        },
+        {
+            "description": "Cable Management Tray",
+            "quantity": 1,
+            "step": 85,
+            "source": "Provided",
+            "bom": []
+        },
+        {
+            "description": "Mounting Hardware",
+            "quantity": 6,
+            "step": 85,
+            "source": "Provided",
+            "bom": []
+        }
+    ]
+}

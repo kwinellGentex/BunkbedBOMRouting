@@ -1,0 +1,37 @@
+[
+    {
+        "step": 1,
+        "description": "Review assembly instructions.",
+        "taktTime": 2
+    },
+    {
+        "step": 5,
+        "description": "Inspect all components for defects.",
+        "taktTime": 3
+    },
+    {
+        "step": 10,
+        "description": "Prepare table legs.",
+        "taktTime": 4
+    },
+    {
+        "step": 15,
+        "description": "Position table top face down on soft surface.",
+        "taktTime": 2
+    },
+    {
+        "step": 20,
+        "description": "Attach corner brackets and legs with screws.",
+        "taktTime": 12
+    },
+    {
+        "step": 25,
+        "description": "Flip table and attach felt pads to leg bottoms.",
+        "taktTime": 3
+    },
+    {
+        "step": 30,
+        "description": "Final quality check and stability test.",
+        "taktTime": 4
+    }
+]

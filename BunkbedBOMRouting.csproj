@@ -8,15 +8,39 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="bookshelf-bom.json" />
+    <None Remove="bookshelf-routing.json" />
     <None Remove="bunkbed-bom.json" />
     <None Remove="bunkbed-routing.json" />
+    <None Remove="coffee-table-bom.json" />
+    <None Remove="coffee-table-routing.json" />
+    <None Remove="desk-bom.json" />
+    <None Remove="desk-routing.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="bookshelf-bom.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bookshelf-routing.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="bunkbed-bom.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="bunkbed-routing.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="coffee-table-bom.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="coffee-table-routing.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="desk-bom.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="desk-routing.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

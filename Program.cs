@@ -4,11 +4,40 @@ using Newtonsoft.Json;
 
 
 // Define file paths for BOM and Routing Steps JSON files
-string BOMFilePath = @"bunkbed-bom.json";
-string RoutingStepsFilePath = @"bunkbed-routing.json";
+
+var selectedTestCase = TestCase.Bookshelf; // Change this to select different test cases
+
+string BOMFilePath = "";
+string RoutingStepsFilePath = "";
+
+switch (selectedTestCase)
+{
+    case TestCase.Bunkbed:
+        BOMFilePath = @"bunkbed-bom.json";
+        RoutingStepsFilePath = @"bunkbed-routing.json";
+        break;
+    case TestCase.Desk:
+        BOMFilePath = @"desk-bom.json";
+        RoutingStepsFilePath = @"desk-routing.json";
+        break;
+    case TestCase.CoffeeTable:
+        BOMFilePath = @"coffee-table-bom.json";
+        RoutingStepsFilePath = @"coffee-table-routing.json";
+        break;
+    case TestCase.Bookshelf:
+        BOMFilePath = @"bookshelf-bom.json";
+        RoutingStepsFilePath = @"bookshelf-routing.json";
+        break;
+    default:
+        Console.WriteLine("Invalid test case selected.");
+        return;
+}
+
+Console.WriteLine($"Selected Test Case: {selectedTestCase}\n");
 
 
-//Attempt to read and deserialize BOM JSON file into a Component object. Early return if file is not found or deserialization fails.
+//Attempt to read and deserialize BOM JSON file into a Component object.
+//Early return if file is not found or deserialization fails.
 FileInfo bomFile = new FileInfo(BOMFilePath);
 if (!bomFile.Exists)
 {
@@ -29,7 +58,8 @@ Console.WriteLine($"Component: {component.Description}\n");
 
 
 
-// Get a dictionary of provided parts and their quantities for the component, then write this information to a CSV file.
+// Get a dictionary of provided parts and their quantities for the component,
+// then write this information to a CSV file.
 Dictionary<string, int> providedPartsQuantity = component.GetComponentProvidedPartsQuantities();
 FileHelper.WriteToCSV(providedPartsQuantity, "Description", "Quantity");
 
@@ -64,4 +94,13 @@ var stepsThatDoNotRequireParts = component.GetStepsThatDoNotRequireParts(routing
 foreach (var step in stepsThatDoNotRequireParts)
 {
     Console.WriteLine($"Step {step.Step} '{step.Description}' has no provided components added.");
+}
+
+Console.WriteLine();
+
+var stepsThatRequireTools = component.GetRoutingStepsThatRequireTools(routingSteps);
+
+foreach (var step in stepsThatRequireTools)
+{
+    Console.WriteLine($"Step {step.Step} '{step.Description}' requires tools");
 }

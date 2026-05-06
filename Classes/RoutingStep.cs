@@ -1,6 +1,12 @@
 ﻿namespace BunkbedBOMRouting.Classes
 {
-    public record RoutingStep(int Step, string Description = "", int TaktTime = 0);
+    /// <summary>
+    /// Record to represent a routing step in the assembly process, containing the step number, description, and takt time.
+    /// </summary>
+    /// <param name="Step"></param>
+    /// <param name="Description"></param>
+    /// <param name="TaktTime"></param>
+    public record RoutingStep(Step Step, string Description = "", int TaktTime = 0);
     
     public static class RoutingStepExtensions
     {
@@ -21,9 +27,9 @@
         /// <param name="steps"></param>
         /// <param name="stepNumbers"></param>
         /// <returns></returns>
-        public static List<RoutingStep> GetRoutingSteps(this IEnumerable<RoutingStep> steps, IEnumerable<int> stepNumbers)
+        public static List<RoutingStep> GetRoutingSteps(this IEnumerable<RoutingStep> steps, IEnumerable<Step> stepNumbers)
         {
-            return steps.Where(s => stepNumbers.Contains(s.Step)).ToList();
+            return steps.Where(s => stepNumbers.Contains(new Step(s.Step))).ToList();
         }
 
         /// <summary>

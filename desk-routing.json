@@ -1,0 +1,92 @@
+[
+    {
+        "step": 1,
+        "description": "Review assembly manual and verify all parts.",
+        "taktTime": 3
+    },
+    {
+        "step": 10,
+        "description": "Prepare desktop panel and check for damage.",
+        "taktTime": 2
+    },
+    {
+        "step": 15,
+        "description": "Attach metal brackets to desktop underside.",
+        "taktTime": 8
+    },
+    {
+        "step": 20,
+        "description": "Secure brackets with screws.",
+        "taktTime": 10
+    },
+    {
+        "step": 25,
+        "description": "Prepare table legs.",
+        "taktTime": 5
+    },
+    {
+        "step": 30,
+        "description": "Attach leg braces to table legs with bolts.",
+        "taktTime": 15
+    },
+    {
+        "step": 35,
+        "description": "Complete leg assembly and test stability.",
+        "taktTime": 5
+    },
+    {
+        "step": 40,
+        "description": "Attach legs to desktop.",
+        "taktTime": 12
+    },
+    {
+        "step": 45,
+        "description": "Assemble drawer panels (dry fit).",
+        "taktTime": 8
+    },
+    {
+        "step": 50,
+        "description": "Install drawer bottom panel.",
+        "taktTime": 4
+    },
+    {
+        "step": 55,
+        "description": "Attach drawer handles.",
+        "taktTime": 6
+    },
+    {
+        "step": 60,
+        "description": "Install drawer slides.",
+        "taktTime": 10
+    },
+    {
+        "step": 65,
+        "description": "Secure drawer assembly with wood screws.",
+        "taktTime": 12
+    },
+    {
+        "step": 70,
+        "description": "Test drawer operation and alignment.",
+        "taktTime": 3
+    },
+    {
+        "step": 75,
+        "description": "Install all three drawer assemblies.",
+        "taktTime": 8
+    },
+    {
+        "step": 80,
+        "description": "Final stability check.",
+        "taktTime": 2
+    },
+    {
+        "step": 85,
+        "description": "Install cable management tray.",
+        "taktTime": 7
+    },
+    {
+        "step": 90,
+        "description": "Final inspection and quality check.",
+        "taktTime": 5
+    }
+]
