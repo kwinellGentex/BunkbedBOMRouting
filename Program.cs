@@ -3,13 +3,13 @@ using BunkbedBOMRouting.Helpers;
 using Newtonsoft.Json;
 
 
-// Define file paths for BOM and Routing Steps JSON files
 
-var selectedTestCase = TestCase.Bookshelf; // Change this to select different test cases
+var selectedTestCase = TestCase.Bunkbed; // Change this to select different test cases
 
 string BOMFilePath = "";
 string RoutingStepsFilePath = "";
 
+// switch case for selected TestCase, just change target file path depending on case.
 switch (selectedTestCase)
 {
     case TestCase.Bunkbed:
@@ -32,7 +32,6 @@ switch (selectedTestCase)
         Console.WriteLine("Invalid test case selected.");
         return;
 }
-
 Console.WriteLine($"Selected Test Case: {selectedTestCase}\n");
 
 
@@ -96,6 +95,7 @@ foreach (var step in stepsThatDoNotRequireParts)
     Console.WriteLine($"Step {step.Step} '{step.Description}' has no provided components added.");
 }
 
+/*
 Console.WriteLine();
 
 var stepsThatRequireTools = component.GetRoutingStepsThatRequireTools(routingSteps);
@@ -104,3 +104,4 @@ foreach (var step in stepsThatRequireTools)
 {
     Console.WriteLine($"Step {step.Step} '{step.Description}' requires tools");
 }
+*/
